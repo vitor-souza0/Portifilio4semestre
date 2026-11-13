@@ -1,0 +1,382 @@
+
+/* =====================================
+   1. VARIÁVEIS GLOBAIS
+===================================== */
+
+:root {
+    --cor-fundo: #121212;
+    --cor-container: #1E1E1E;
+    --cor-container-hover: #282828;
+
+    --cor-texto-primario: #FFFFFF;
+    --cor-texto-secundario: #A7A7A7;
+
+    --cor-acento: #BB86FC;
+    --cor-acento-hover: #A56EF1;
+
+    --cor-borda: #333333;
+
+    --sombra: 0 10px 35px rgba(0, 0, 0, 0.35);
+
+    --raio: 16px;
+}
+
+/* =====================================
+   2. RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =====================================
+   3. CONFIGURAÇÕES DO DOCUMENTO
+===================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #292039 0%,
+            var(--cor-fundo) 55%
+        );
+
+    color: var(--cor-texto-primario);
+
+    min-height: 100vh;
+    padding: 24px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* =====================================
+   4. CONTAINER PRINCIPAL
+===================================== */
+
+.container {
+    width: 100%;
+    max-width: 600px;
+
+    background-color: var(--cor-container);
+
+    padding: 35px;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+
+    box-shadow: var(--sombra);
+
+    text-align: center;
+}
+
+
+/* =====================================
+   5. PERFIL
+===================================== */
+
+.perfil {
+    margin-bottom: 35px;
+}
+
+.perfil__foto {
+    width: 125px;
+    height: 125px;
+
+    border-radius: 50%;
+    border: 3px solid var(--cor-acento);
+
+    object-fit: cover;
+
+    margin-bottom: 18px;
+
+    box-shadow: 0 0 25px rgba(187, 134, 252, 0.2);
+}
+
+.perfil__texto h1 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.perfil__texto p {
+    color: var(--cor-texto-secundario);
+    font-size: 1rem;
+}
+
+/* =====================================
+   6. LINKS
+===================================== */
+
+.links ul {
+    list-style: none;
+}
+
+.links li {
+    margin-bottom: 15px;
+}
+
+.links a {
+    display: block;
+
+    padding: 16px;
+
+    background-color: #292929;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+
+    color: var(--cor-texto-primario);
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: all 0.25s ease;
+}
+
+.links a:hover {
+    background-color: var(--cor-acento);
+
+    color: #121212;
+
+    border-color: var(--cor-acento);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 18px rgba(187, 134, 252, 0.2);
+}
+
+/* =====================================
+   7. RODAPÉ
+===================================== */
+
+.rodape {
+    margin-top: 35px;
+
+    font-size: 0.85rem;
+    color: var(--cor-texto-secundario);
+}
+
+.rodape p {
+    margin-top: 10px;
+}
+
+.nav-link {
+    color: var(--cor-acento);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* =====================================
+   8. ACESSIBILIDADE
+===================================== */
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =====================================
+   9. FORMULÁRIO DE CONTATO
+===================================== */
+
+.contact-form-section {
+    text-align: left;
+}
+
+.contact-form-section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.contact-intro {
+    color: var(--cor-texto-secundario);
+    line-height: 1.6;
+    margin-bottom: 28px;
+}
+
+/* Organização dos campos */
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: var(--cor-texto-secundario);
+}
+
+/* Campos de texto */
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px;
+
+    background-color: #151515;
+
+    border: 1px solid var(--cor-borda);
+    border-radius: 9px;
+
+    color: var(--cor-texto-primario);
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    transition: border-color 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+/* Efeito quando o usuário seleciona um campo */
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+
+    border-color: var(--cor-acento);
+
+    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.15);
+}
+
+/* Área de mensagem */
+
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* Texto de orientação */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777777;
+}
+
+/* =====================================
+   10. BOTÃO DE ENVIO
+===================================== */
+
+.btn {
+    display: block;
+    width: 100%;
+
+    padding: 15px;
+
+    background-color: var(--cor-acento);
+
+    color: #121212;
+
+    border: none;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.btn:hover {
+    background-color: var(--cor-acento-hover);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 18px rgba(187, 134, 252, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* =====================================
+   11. ACESSIBILIDADE DO TECLADO
+===================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--cor-acento);
+    outline-offset: 4px;
+}
+
+/* Respeita quem prefere menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
+/* =====================================
+   12. RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 14px;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 24px 18px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .perfil__foto {
+        width: 110px;
+        height: 110px;
+    }
+
+    .perfil__texto h1 {
+        font-size: 1.5rem;
+    }
+
+    .perfil__texto p {
+        font-size: 0.9rem;
+    }
+
+    .contact-form-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn {
+        padding: 14px;
+    }
+}
